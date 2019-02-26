@@ -92,6 +92,7 @@ class kdMarkdownPad(QMainWindow):
     def on_pb_preview_clicked(self):
         html = markdown.markdown(self.te_editor.toPlainText())
         self.tb_viewer.setHtml(html)
+        self.tb_viewer.moveCursor(self.tb_viewer.textCursor().End)
 
     @pyqtSlot()
     def on_pb_open_file_clicked(self):
