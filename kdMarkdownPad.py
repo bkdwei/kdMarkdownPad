@@ -40,6 +40,7 @@ class kdMarkdownPad(QMainWindow):
         self.autosave_change_counter = 0
         self.handbook = QWebEngineView()
 
+        print(dir(self.tb_viewer))
         # ~ 加载最近打开的文件
         self.conf = kdconfig.init_conf()
         self.cur_file = None
@@ -92,7 +93,7 @@ class kdMarkdownPad(QMainWindow):
     def on_pb_preview_clicked(self):
         html = markdown.markdown(self.te_editor.toPlainText())
         self.tb_viewer.setHtml(html)
-        self.tb_viewer.moveCursor(self.tb_viewer.textCursor().End)
+        # ~ self.tb_viewer.moveCursor(self.tb_viewer.textCursor().End)
 
     @pyqtSlot()
     def on_pb_open_file_clicked(self):
@@ -125,7 +126,7 @@ class kdMarkdownPad(QMainWindow):
         with open(self.cur_file, "w") as f:
             f.write(self.te_editor.toPlainText())
             self.state = 2
-            self.statusbar.showMessage("保存文件成功," + self.cur_file +"," str(self.now()))
+            self.statusbar.showMessage("保存文件成功," + self.cur_file +"," + str(self.now()))
         kdconfig.update_conf(self.cur_file)
 
     @pyqtSlot()
