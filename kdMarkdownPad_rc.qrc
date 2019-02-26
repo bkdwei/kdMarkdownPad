@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="bold">
+    <file>resource/icon-tool-bold.png</file>
+  </qresource>
+  <qresource prefix="heading">
+    <file>resource/icon-tool-heading.png</file>
+  </qresource>
+  <qresource prefix="italic">
+    <file>resource/icon-tool-italic.png</file>
+  </qresource>
+  <qresource prefix="indent code">
+    <file>resource/icon-tool-code.png</file>
+  </qresource>
+  <qresource prefix="link">
+    <file>resource/icon-link.png</file>
+  </qresource>
+</RCC>
